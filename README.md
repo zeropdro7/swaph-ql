@@ -13,7 +13,6 @@ Para correr la API, asegurarse de tener instalado:
 -   node.js
 -   npm
 -   NestCLI
--   Serverless Framework
 -   MySQL
 
 Luego, correr la API usando:
