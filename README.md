@@ -1,7 +1,10 @@
 # SWAPHQL
 
-Instalación
+```bash
+#Instalación
+
 $ npm install
+```
 
 ## Correr API
 
@@ -33,7 +36,10 @@ $ npm run start:dev
 # Production mode
 $ npm run start:prod
 
-Test
+
+```bash
+## Test
+
 # Unit tests
 $ npm run test
 
@@ -42,5 +48,6 @@ $ npm run test:e2e
 
 # Test coverage
 $ npm run test:cov
+```
 
 Con esto, el backend estará corriendo en `localhost:7000`. Puedes empezar haciendo consultas en `POST localhost:7000/graphql`. Finalmente puedes abrir `localhost:7000` en el navegador y usar GraphQL Playground.
