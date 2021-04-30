@@ -1,7 +1,7 @@
 # SWAPHQL
 
 ```bash
-#Instalación
+##Instalación
 
 $ npm install
 ```
@@ -21,28 +21,22 @@ Luego, correr la API usando:
 # Instalar dependencias
 npm install
 
-# Testear la instalación. Todo debe pasar.
+# Testear la instalación. Todo debe pasar. Tests Unitarios.
 npm run test
 
 # Copiar el archivo de credenciales. Asegurarse de llenar toda la información necesaria.
 cp .env.example .env
 
-# Correr el proyecto Nest
+# Correr el proyecto Nest.
 npm run start
 ```
 
-# Watch mode
+# Modo 'watch'
 $ npm run start:dev
-
-# Production mode
-$ npm run start:prod
 
 
 ```bash
-## Test
-
-# Unit tests
-$ npm run test
+## Otros Test
 
 # e2e tests
 $ npm run test:e2e
