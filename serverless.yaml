@@ -1,0 +1,77 @@
+service:
+ name: nest-serverless-lambda-demo
+
+plugins:
+ - 'serverless-plugin-typescript'
+ - serverless-plugin-optimize
+ - serverless-dynamodb-local
+ - serverless-offline
+ - serverless-plugin-warmup
+
+custom:
+  tableName: 'todos-${self:provider.stage}'
+  # Enable warmup on all functions (only for production and staging)
+  warmup:
+    enabled: true
+  dynamodb:
+    stages:
+      - ${self:provider.stage}
+    start:
+      port: 9000
+      inMemory: true
+      migrate: true
+      seed: false
+
+provider:
+ name: aws
+ runtime: nodejs12.x
+ stage: dev
+ apiGateway:
+    shouldStartNameWithService: true
+ iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - { 'Fn::GetAtt': ['TodosDynamoDBTable', 'Arn'] }
+  environment:
+    TODOS_TABLE: ${self:custom.tableName}
+
+functions:
+ main: # The name of the lambda function
+   # The module 'handler' is exported in the file 'src/lambda'
+   handler: src/lambda.handler
+   events:
+     - http:
+         method: any
+         path: /{any+}
+
+resources:
+  - ${file(resource/dynamodb.yml)}
+  Resources:
+    TodosDynamoDBTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: todoId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: todoId
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:custom.tableName}
+
+        service: aws-nestjs-starter
+
+# remove the unnecessary packages to keep small upload size
+package:
+  exclude:
+    - node_modules/typescript/**
+    - node_modules/@types/**
