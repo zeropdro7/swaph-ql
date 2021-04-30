@@ -20,7 +20,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
 			await connectionManager.get(connectionName).close();
 		} else {
 			options = {
-				type: "postgres",
+				type: "mysql",
 				host: this.configService.get<string>("DB_HOST"),
 				port: this.configService.get<number>("DB_PORT"),
 				database: this.configService.get<string>("DB_NAME"),
@@ -29,7 +29,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
 				logging: this.configService.get<LoggerOptions>("DB_LOG_LEVEL"),
 				synchronize: false,
 				entities: [path.join(__dirname, "/../**/*.entity.js")],
-				migrations: [path.join(__dirname, "/migrations/*.js")],
+				migrations: [path.join(__dirname, "/migraciones/*.js")],
 				migrationsRun:
 					this.configService.get<string>("NODE_ENV") !== "production",
 				namingStrategy: new SnakeNamingStrategy()

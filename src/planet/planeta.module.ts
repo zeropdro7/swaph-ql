@@ -3,6 +3,7 @@ import { PlanetaService } from "./planeta.service";
 import { PlanetaResolver } from "./planeta.resolver";
 
 @Module({
+	imports: [],
 	providers: [PlanetaResolver, PlanetaService],
 	exports: [PlanetaService]
 })

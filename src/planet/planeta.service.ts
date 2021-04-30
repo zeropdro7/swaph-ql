@@ -51,4 +51,16 @@ export class PlanetaService {
 			return planetaCreado;
 		});
 	}
+	
+	/**
+	 * Obtener Planetas.
+	 *
+	 * Devuelve toda la lista de Planetas creados Activos.
+	 *
+	 * @returns Arreglo Planeta.
+	 */
+	 obtenerPlanetasCreados(): Promise<Planeta[]> {
+		const repositorioPlanetas = this.connection.getRepository(Planeta);
+		return repositorioPlanetas.find({ where: { enActividad: true } });
+	}
 }

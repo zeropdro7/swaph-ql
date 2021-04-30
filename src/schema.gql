@@ -1,0 +1,39 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Planeta {
+  id: Int!
+  nombre: String!
+  clima: String!
+  diametro: Float!
+  gravedad: Float!
+  periodoDeTraslacion: Int!
+  periodoDeRotacion: Int!
+  poblacion: Int!
+  tipoDeTerreno: String!
+  enActividad: Boolean!
+}
+
+type Query {
+  saludo: String!
+
+  """Obtiene todos los Planetas creados Activos"""
+  obtenerPlanetasCreados: [Planeta!]!
+}
+
+type Mutation {
+  crearPlaneta(crearPlanetaInput: CrearPlanetaInput!): Planeta!
+}
+
+input CrearPlanetaInput {
+  nombre: String!
+  clima: String!
+  diametro: Float!
+  gravedad: Float!
+  periodoDeTraslacion: Int!
+  periodoDeRotacion: Int!
+  poblacion: Int!
+  tipoDeTerreno: String!
+  enActividad: Boolean!
+}

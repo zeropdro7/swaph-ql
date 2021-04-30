@@ -1,4 +1,4 @@
-import { Resolver, Mutation, Args } from "@nestjs/graphql";
+import { Resolver, Mutation, Args, Query } from "@nestjs/graphql";
 import { PlanetaService } from "./planeta.service";
 import { Planeta } from "./entidades/planeta.entity";
 import { CrearPlanetaInput } from "./dto/crearPlaneta.input";
@@ -6,6 +6,11 @@ import { CrearPlanetaInput } from "./dto/crearPlaneta.input";
 @Resolver()
 export class PlanetaResolver {
 	constructor(private readonly planetaService: PlanetaService) {}
+
+	@Query(() => String)
+	saludo() {
+		return "Hola Zoluxiones!";
+	}
 
 	@Mutation(() => Planeta)
 	crearPlaneta(
@@ -22,5 +27,12 @@ export class PlanetaResolver {
 			crearPlanetaInput.tipoDeTerreno,
 			crearPlanetaInput.enActividad
 		);
+	}
+
+	@Query(() => [Planeta], {
+		description: "Obtiene todos los Planetas creados Activos"
+	})
+	obtenerPlanetasCreados() {
+		return this.planetaService.obtenerPlanetasCreados();
 	}
 }

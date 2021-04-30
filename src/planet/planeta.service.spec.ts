@@ -1,7 +1,6 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { Connection } from "typeorm";
 import { PlanetaService } from "./planeta.service";
-import { Planeta } from "./entidades/planeta.entity";
 
 describe("PlanetaService", () => {
 	let planetaService: PlanetaService;
@@ -28,15 +27,25 @@ describe("PlanetaService", () => {
 
 	describe("crearPlaneta", () => {
 		it("Debe crear un Planeta", async () => {
-			// Arrange
-			const findOne = jest.fn();
-			findOne.mockImplementation(() => undefined);
-			getRepository.mockImplementation(() => ({ findOne }));
-
-			// Act and assert
 			return expect(
-				planetaService.crearPlaneta()
-			).rejects.toThrow("No se pudo crear el planeta");
+				planetaService.crearPlaneta(
+					"tierra",
+					"frio",
+					10.0,
+					9.8,
+					24,
+					140,
+					10000,
+					"arido",
+					true
+				)
+			);
+		});
+	});
+
+	describe("obtenerPlanetasCreados", () => {
+		it("TODO: Debe retornar la lista de Planetas creados Activos", async () => {
+			// @TODO
 		});
 	});
 });
