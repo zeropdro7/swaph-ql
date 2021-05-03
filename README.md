@@ -14,6 +14,7 @@ Para correr la API, asegurarse de tener instalado:
 -   npm
 -   NestCLI
 -   MySQL
+-   axios
 
 Luego, correr la API usando:
 
@@ -46,3 +47,23 @@ $ npm run test:cov
 ```
 
 Con esto, el backend estará corriendo en `localhost:7000`. Puedes empezar haciendo consultas en `localhost:7000/graphql` y usar GraphQL Playground en el navegador.
+
+# Ejemplos de Consultas de SWAPHQL en Playground:
+
+<img width="956" alt="saludo" src="https://user-images.githubusercontent.com/83446157/116849943-547f6f00-abb5-11eb-9d62-998d05b4e715.png">
+(Saludos Cordiales!)
+
+--
+
+<img width="958" alt="crearPlaneta" src="https://user-images.githubusercontent.com/83446157/116849957-5ba67d00-abb5-11eb-84ea-6754a2191e74.png">
+(Puedes elegir solo los campos que quiere que se devuelva)
+
+--
+
+<img width="959" alt="obtenerPlanetasCreados" src="https://user-images.githubusercontent.com/83446157/116849970-6234f480-abb5-11eb-9b20-107e294a99c0.png">
+(Puedes elegir solo los campos que quiere que se devuelva)
+
+--
+
+<img width="958" alt="obtenerNombrePlaneta" src="https://user-images.githubusercontent.com/83446157/116849983-68c36c00-abb5-11eb-99b6-87b20cc42ce0.png">
+(Integración con SWAPI)
