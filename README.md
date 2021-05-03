@@ -56,12 +56,12 @@ Con esto, el backend estará corriendo en `localhost:7000`. Puedes empezar hacie
 --
 
 <img width="958" alt="crearPlaneta" src="https://user-images.githubusercontent.com/83446157/116849957-5ba67d00-abb5-11eb-84ea-6754a2191e74.png">
-(Puedes elegir solo los campos que quiere que se devuelva)
+(Puede elegir solo los campos que quiere que se devuelva)
 
 --
 
 <img width="959" alt="obtenerPlanetasCreados" src="https://user-images.githubusercontent.com/83446157/116849970-6234f480-abb5-11eb-9b20-107e294a99c0.png">
-(Puedes elegir solo los campos que quiere que se devuelva)
+(Puede elegir solo los campos que quiere que se devuelva)
 
 --
 
