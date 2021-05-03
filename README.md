@@ -8,7 +8,6 @@ Para correr la API, asegurarse de tener instalado:
 -   npm
 -   NestCLI
 -   MySQL
--   axios
 
 Luego, correr la API usando:
 
