@@ -1,4 +1,4 @@
-import { Resolver, Mutation, Args, Query } from "@nestjs/graphql";
+import { Resolver, Mutation, Args, Query, Int } from "@nestjs/graphql";
 import { PlanetaService } from "./planeta.service";
 import { Planeta } from "./entidades/planeta.entity";
 import { CrearPlanetaInput } from "./dto/crearPlaneta.input";
@@ -34,5 +34,12 @@ export class PlanetaResolver {
 	})
 	obtenerPlanetasCreados() {
 		return this.planetaService.obtenerPlanetasCreados();
+	}
+
+	@Query(() => String, {
+		description: "Obtiene los nombres de cada uno de los 61 Planetas de Star Wars"
+	})
+	obtenerNombrePlaneta(@Args("planetaId", { type: () => Int }) planetaId: number) {
+		return this.planetaService.obtenerPlaneta(planetaId);
 	}
 }

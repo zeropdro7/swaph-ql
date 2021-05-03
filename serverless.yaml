@@ -1,5 +1,5 @@
 service:
- name: nest-serverless-lambda-demo
+ name: swaphql
 
 plugins:
  - 'serverless-plugin-typescript'

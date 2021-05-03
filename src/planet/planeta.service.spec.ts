@@ -48,4 +48,10 @@ describe("PlanetaService", () => {
 			// @TODO
 		});
 	});
+
+	describe("obtenerPlanetas", () => {
+		it("TODO: Debe retornar la lista de Planetas de Star Wars desde SWAPI", async () => {
+			// @TODO
+		});
+	});
 });

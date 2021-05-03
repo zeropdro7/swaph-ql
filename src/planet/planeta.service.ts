@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { Connection } from "typeorm";
 import { Planeta } from "./entidades/planeta.entity";
+import axios, { AxiosResponse } from 'axios';
 
 @Injectable()
 export class PlanetaService {
@@ -53,7 +54,7 @@ export class PlanetaService {
 	}
 	
 	/**
-	 * Obtener Planetas.
+	 * Obtener Planetas Creados.
 	 *
 	 * Devuelve toda la lista de Planetas creados Activos.
 	 *
@@ -62,5 +63,22 @@ export class PlanetaService {
 	 obtenerPlanetasCreados(): Promise<Planeta[]> {
 		const repositorioPlanetas = this.connection.getRepository(Planeta);
 		return repositorioPlanetas.find({ where: { enActividad: true } });
+	}
+
+	/**
+	 * Obtener Planetas.
+	 *
+	 * Devuelve los nombres de cada uno de los 61 planetas de Star Wars.
+	 *
+	 * @param planetaId ID del Planeta de Star Wars. Disponibles del 1 al 61.
+	 * @returns Planetas Star Wars.
+	 */
+	async obtenerPlaneta(planetaId: number): Promise<AxiosResponse<string>> {
+		try {
+			const { data } = await axios.get(`https://swapi.py4e.com/api/planets/${planetaId}`);
+    		return data.name;
+		} catch (e) {
+			throw e;
+		}
 	}
 }

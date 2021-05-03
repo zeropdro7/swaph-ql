@@ -20,6 +20,9 @@ type Query {
 
   """Obtiene todos los Planetas creados Activos"""
   obtenerPlanetasCreados: [Planeta!]!
+
+  """Obtiene los nombres de cada uno de los 61 Planetas de Star Wars"""
+  obtenerNombrePlaneta(planetaId: Int!): String!
 }
 
 type Mutation {
