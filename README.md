@@ -1,11 +1,5 @@
 # SWAPHQL
 
-```bash
-##Instalación
-
-$ npm install
-```
-
 ## Correr API
 
 Para correr la API, asegurarse de tener instalado:
@@ -48,7 +42,7 @@ $ npm run test:cov
 
 Con esto, el backend estará corriendo en `localhost:7000`. Puedes empezar haciendo consultas en `localhost:7000/graphql` y usar GraphQL Playground en el navegador.
 
-# Ejemplos de Consultas de SWAPHQL en Playground:
+# Ejemplos de Consultas de SwaphQL en Playground:
 
 <img width="956" alt="saludo" src="https://user-images.githubusercontent.com/83446157/116849943-547f6f00-abb5-11eb-9d62-998d05b4e715.png">
 (Saludos Cordiales!)
