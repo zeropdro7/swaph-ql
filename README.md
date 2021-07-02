@@ -44,11 +44,6 @@ Con esto, el backend estará corriendo en `localhost:7000`. Puedes empezar hacie
 
 # Ejemplos de Consultas de SwaphQL en Playground:
 
-<img width="956" alt="saludo" src="https://user-images.githubusercontent.com/83446157/116849943-547f6f00-abb5-11eb-9d62-998d05b4e715.png">
-(Saludos Cordiales!)
-
---
-
 <img width="958" alt="crearPlaneta" src="https://user-images.githubusercontent.com/83446157/116849957-5ba67d00-abb5-11eb-84ea-6754a2191e74.png">
 (Puede elegir solo los campos que quiere que se devuelva)
 
