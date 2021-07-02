@@ -9,7 +9,7 @@ export class PlanetaResolver {
 
 	@Query(() => String)
 	saludo() {
-		return "Hola Zoluxiones!";
+		return "Hola, INDRA!!";
 	}
 
 	@Mutation(() => Planeta)
